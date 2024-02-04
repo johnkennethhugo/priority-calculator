@@ -1,0 +1,43 @@
+input[type="radio"],
+input[type="date"] {
+    margin-bottom: 10px;
+}
+
+
+.app-container {
+    margin-top: 3vw;
+    max-width: 100vw;
+    display: flex;
+    justify-content: center;
+    font-size: calc(10px + 1vmin);
+    flex-wrap: wrap;
+}
+
+.app-content {
+    border: 2px rgba(255, 255, 255, 0.3) solid;
+    background-image: linear-gradient(#020215, #020219);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    flex-basis: calc(50% - 20px);
+    min-width: 300px;
+    padding: 20px;
+    transition: 0.25s;
+    border-radius: 5px;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    font-weight: bolder;
+    margin-top: 2vh;
+}
+.level{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+}
+.level-label,
+.level-num{
+    box-shadow: 0 2px 7px 0 rgba(255, 255, 255, 0.2), 0 3px 7px 0 rgba(255, 255, 255, 0.19);
+    margin: 5px 5px;
+    flex-basis: 20%;
+    border: 2px rgba(255, 255, 255, 0.3) solid;
+    padding: 20px;
+    text-align: center;
+}

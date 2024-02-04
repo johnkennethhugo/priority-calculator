@@ -1,0 +1,18 @@
+.side-pane {
+    border: 2px rgba(255, 255, 255, 0.3) solid;
+    background-image: linear-gradient(#020215, #020219);
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: calc(50px + 20vw); 
+    height: 100%; 
+    background-color: #f0f0f0; 
+    padding: 20px; 
+    box-sizing: border-box; 
+    flex: 50%;
+  }
+
+  .side-pane-content {
+    /* Add styles for content inside the side pane */
+  }
