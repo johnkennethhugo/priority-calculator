@@ -9,10 +9,32 @@
     height: 100%; 
     background-color: #f0f0f0; 
     padding: 20px; 
-    box-sizing: border-box; 
-    flex: 50%;
+    box-sizing: border-box;
+  }
+  #namex,
+  #date_created,
+  #form-options {
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  #date_created{
+    background-color: #333; 
+  }  
+  .form-options-active {
+    box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.2), 0 6px 20px 0 rgba(255, 255, 255, 0.19);
+    background-color: #007bff !important; 
+    color: #f0f0f0;
+  }
+  .form-options-inactive {
+    background-color: #333;
+    color: #f0f0f0;
   }
 
-  .side-pane-content {
-    /* Add styles for content inside the side pane */
+  #form-submit{
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
   }
