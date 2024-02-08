@@ -10,8 +10,24 @@ function Sidebar(sidebar) {
     const [dateCreated, setDateCreated] = useState('');
     const [slaBreached, setSlaBreached] = useState(false);
     const [escalated, setEscalated] = useState('');
-    const slaDaysWO = [60, 30, 8, 5];
-    const slaDaysIn = [30, 15, 5, 1];
+    const slaDaysStan = [20, 5, 1, 0.5];
+    const slaDaysCrit = [8, 3, 0.333, 0.167];
+
+// inc
+// 5
+// wo
+// 2
+
+// pri
+// 2
+// 4
+// 6
+// 8
+
+// age
+// 1
+// esc
+// 1.5
 
     const nameChangeHandler = (event) =>{
         setName(event.target.value);
@@ -29,32 +45,32 @@ function Sidebar(sidebar) {
         if (type === 'Workorder'){
         switch (priority) {
             case 'Low':
-            day = slaDaysWO[0];
+            day = slaDaysStan[0];
             break;
             case 'Medium':
-            day = slaDaysWO[1];
+            day = slaDaysStan[1];
             break;
             case 'High':
-            day = slaDaysWO[2];
+            day = slaDaysStan[2];
             break;
             case 'Critical':
-            day = slaDaysWO[3];
+            day = slaDaysStan[3];
             break;
             default:
                 day = 0;
         }} else {
         switch (priority) {
             case 'Low':
-            day = slaDaysIn[0];
+            day = slaDaysStan[0];
             break;
             case 'Medium':
-            day = slaDaysIn[1];
+            day = slaDaysStan[1];
             break;
             case 'High':
-            day = slaDaysIn[2];
+            day = slaDaysStan[2];
             break;
             case 'Critical':
-            day = slaDaysIn[3];
+            day = slaDaysCrit[3];
             break;
             default:
                 day = 0;

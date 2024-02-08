@@ -24,9 +24,12 @@ function List(list) {
                     </tr>
                 </thead>
                 <tbody> 
-                {list.data.sort((a, b) => a.pl - b.pl).map((entry) => (
-                    <Entry key={entry.id} data={entry} onDeleteEntry={onDeleteEntry}/>
-                    ))}
+                {(list.data.length === 0)?
+                <tr className="list-item"><td>No Entries Found</td></tr>
+                :
+                list.data.sort((a, b) => a.pl - b.pl).map((entry) => (
+                    <Entry key={entry.id} data={entry} onDeleteEntry={onDeleteEntry}/>                   
+                ))}
                 </tbody>
             </table>
         </div>
