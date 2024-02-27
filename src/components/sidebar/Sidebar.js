@@ -10,24 +10,10 @@ function Sidebar(sidebar) {
     const [dateCreated, setDateCreated] = useState('');
     const [slaBreached, setSlaBreached] = useState(false);
     const [escalated, setEscalated] = useState('');
+
     const slaDaysStan = [20, 5, 1, 0.5];
     const slaDaysCrit = [8, 3, 0.333, 0.167];
-
-// inc
-// 5
-// wo
-// 2
-
-// pri
-// 2
-// 4
-// 6
-// 8
-
-// age
-// 1
-// esc
-// 1.5
+    
 
     const nameChangeHandler = (event) =>{
         setName(event.target.value);
@@ -80,13 +66,61 @@ function Sidebar(sidebar) {
     });
 
     const levelCalculator = (data) => {
-        console.log(data);
-        const randomNumber = Math.floor(Math.random() * 8) + 1;//mock Prioritization Level
+
+        let priorityScore = 0;
+        switch (data.type) {
+            case 'Workorder':
+                priorityScore += 3;
+                break;
+            case 'Incident':
+                priorityScore += 5;
+                break;
+            default:
+                priorityScore = 0;
+        }
+            
+        const urgencyVal = [2, 4, 6, 8];
+        switch (data.priority) {
+            case 'Low':
+                priorityScore += urgencyVal[0];
+            break;
+            case 'Medium':
+                priorityScore += urgencyVal[1];
+            break;
+            case 'High':
+                priorityScore += urgencyVal[2];
+            break;
+            case 'Critical':
+                priorityScore += urgencyVal[3];
+            break;
+            default:
+                priorityScore += 0;
+        }
+
+        data.sla_breached?
+        priorityScore += 1: priorityScore += 0;  
+
+        data.escalated === "Yes"?
+        priorityScore += 1.5: priorityScore += 0;
+        
+        const inputMin = 5;
+        const inputMax = 15.5;
+        const outputMin = 8;
+        const outputMax = 1;
+
+        const mappedValue = mapValue(priorityScore, inputMin, inputMax, outputMin, outputMax);
+
         const entry = {...data,
-            pl: randomNumber
+            pl: mappedValue
          };
+
         sidebar.onProceed(entry);
     };
+
+    const  mapValue = (value, inMin, inMax, outMin, outMax) => {
+        const mappedValue = (value - inMin) * (outMax - outMin) / (inMax - inMin) + outMin;
+        return Math.round(mappedValue * 100) / 100;
+    }
 
     useEffect(() => {
         slaCalculator();
