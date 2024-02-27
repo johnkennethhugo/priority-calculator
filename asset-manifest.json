@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/priority-calculator/static/css/main.2d03b9b9.css",
-    "main.js": "/priority-calculator/static/js/main.25be2414.js",
+    "main.js": "/priority-calculator/static/js/main.5de77745.js",
     "index.html": "/priority-calculator/index.html",
     "main.2d03b9b9.css.map": "/priority-calculator/static/css/main.2d03b9b9.css.map",
-    "main.25be2414.js.map": "/priority-calculator/static/js/main.25be2414.js.map"
+    "main.5de77745.js.map": "/priority-calculator/static/js/main.5de77745.js.map"
   },
   "entrypoints": [
     "static/css/main.2d03b9b9.css",
-    "static/js/main.25be2414.js"
+    "static/js/main.5de77745.js"
   ]
 }
